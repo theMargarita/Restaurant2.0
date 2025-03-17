@@ -86,6 +86,7 @@
                 $"{tableNumber}.\nTotal: {order.CalculateTotal():C}");
         }
 
+        //incase you want to remove reservation
         public void RemoveReservation(string customerName)
         {
             var bookingToRemove = Bookings.FirstOrDefault(b => b.CustomerName == customerName);
