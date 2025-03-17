@@ -4,14 +4,14 @@
     {
         private static int _orderCounter = 1;
         public int OrderID { get; set; }
-        public List<Dish> Dishes { get; set; } = new();
-        public Table Tables { get; set; }
+        public List<Dish> Dishes { get; set; } = new(); //list with dish objects from class dish (would be null if if initialized)
+        public Table Tables { get; set; } //an object that can be accessed from outside
 
         public Order(Table table)
         {
             OrderID = _orderCounter;
-            _orderCounter++;
-            Tables = table;
+            _orderCounter++; //increment for every dish with own id
+            Tables = table; 
         }
 
         public void PlaceOrder(Dish dish, int tableNumber)

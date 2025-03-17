@@ -11,11 +11,6 @@ namespace Restaurant2._0
             Dishes.Add(dish);
         }
 
-        public Dish? GetDish(int dishId)
-        {
-            return Dishes.FirstOrDefault(d => d.ID == dishId);
-        }
-
         public void RemoveDish(int dishId)
         {
             Dishes.RemoveAll(d => d.ID == dishId);
@@ -64,22 +59,22 @@ namespace Restaurant2._0
             Console.WriteLine($"Ingredient {ingredients} added in {dish.Name}");
         }
 
-        //
-        public void RemoveIngredient(string ingredients, int dishId)
-        {
-            Dish dish = Dishes.FirstOrDefault(d => d.ID == dishId);
-            if (dish == null)
-            {
-                Console.WriteLine("Dish not found");
-                return;
-            }
-            if (!dish.Ingredients.Contains(ingredients))
-            {
-                Console.WriteLine($"Ingredient {ingredients} is not in {dish.Name}."); 
-                return;
-            }
-            dish.Ingredients.Remove(ingredients);
-            Console.WriteLine("Ingredient removed");
-        }
+
+        //public void RemoveIngredient(string ingredients, int dishId)
+        //{
+        //    Dish dish = Dishes.FirstOrDefault(d => d.ID == dishId);
+        //    if (dish == null)
+        //    {
+        //        Console.WriteLine("Dish not found");
+        //        return;
+        //    }
+        //    if (!dish.Ingredients.Contains(ingredients))
+        //    {
+        //        Console.WriteLine($"Ingredient {ingredients} is not in {dish.Name}."); 
+        //        return;
+        //    }
+        //    dish.Ingredients.Remove(ingredients);
+        //    Console.WriteLine("Ingredient removed");
+        //}
     }
 }

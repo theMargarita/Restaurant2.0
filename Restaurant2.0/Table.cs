@@ -1,16 +1,10 @@
 ﻿namespace Restaurant2._0
 {
-    public class Table
+    public class Table(int tableNumber)
     {
-        public int TableNumber { get; set; }
-        public List<DateTime> BookedDate { get; set; }
+        public int TableNumber { get; set; } = tableNumber; //primary constructor - according to vs
 
-        public Table(int tableNumber)
-        {
-            TableNumber = tableNumber;
-            BookedDate = new List<DateTime>();
-            //Status = false;
-        }
+        public List<DateTime> BookedDate { get; set; } = new List<DateTime>(); //primary constructor - according to vs
 
         public bool CheckAvailability(DateTime date)
         {

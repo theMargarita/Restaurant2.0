@@ -111,14 +111,13 @@
                     m.Menu.Dishes.FirstOrDefault(d => d.ID == 4),
 
                 };
-                //orderDishes = orderDishes.Where(d => d != null).ToList();
 
                 if (orderDishes.Count > 0)
                 {
                     m.ConfirmOrder(booking.Tables.TableNumber, orderDishes);
                 }
             }
-
+            Console.WriteLine();
             int tn2 = 2;
             Booking? booking2 = m.Bookings.FirstOrDefault(b => b.Tables.TableNumber == tn2);
             if (booking2 != null)
@@ -149,51 +148,51 @@
                 foreach (var d in m.Menu.Dishes)
                 {
                     Console.WriteLine($"Table {o.Tables.TableNumber} dish {d.Name}");
-
                 }
             }
+                    Console.WriteLine();
         }
 
         //-----------
-        public static void RemoveReservations()
-        {
-            Console.WriteLine("Enter the name of the customer");
-            string name = Console.ReadLine();
-            m.RemoveReservation(name);
-        }
-        //the interactive part - inte nödvändligt men den fungerar 
-        public static void MakeReservation()
-        {
-            Console.WriteLine("Enter your name");
-            string name = Console.ReadLine();
+        //public static void RemoveReservations()
+        //{
+        //    Console.WriteLine("Enter the name of the customer");
+        //    string name = Console.ReadLine();
+        //    m.RemoveReservation(name);
+        //}
+        ////the interactive part - inte nödvändligt men den fungerar 
+        //public static void MakeReservation()
+        //{
+        //    Console.WriteLine("Enter your name");
+        //    string name = Console.ReadLine();
 
-            DateTime date;
-            while (true)
-            {
-                Console.WriteLine("Enter the date and time (YYYY-MM-DD HH:MM:SS)");
-                if (DateTime.TryParse(Console.ReadLine(), out date))
-                {
-                    break;
-                }
-                Console.WriteLine("Invalid typo, try again");
-                return;
-            }
+        //    DateTime date;
+        //    while (true)
+        //    {
+        //        Console.WriteLine("Enter the date and time (YYYY-MM-DD HH:MM:SS)");
+        //        if (DateTime.TryParse(Console.ReadLine(), out date))
+        //        {
+        //            break;
+        //        }
+        //        Console.WriteLine("Invalid typo, try again");
+        //        return;
+        //    }
 
-            int table;
-            while (true)
-            {
-                Console.WriteLine("Enter a table number, between 1-7");
-                if (int.TryParse(Console.ReadLine(), out table) && table >= 1 && table <= 7)
-                {
-                    break;
-                }
-                Console.WriteLine("Invalid or booked table");
-                //return;
-            }
+        //    int table;
+        //    while (true)
+        //    {
+        //        Console.WriteLine("Enter a table number, between 1-7");
+        //        if (int.TryParse(Console.ReadLine(), out table) && table >= 1 && table <= 7)
+        //        {
+        //            break;
+        //        }
+        //        Console.WriteLine("Invalid or booked table");
+        //        //return;
+        //    }
 
-            m.MakeReservation(name, date, table);
-            //Console.WriteLine("Confirmed");
-        }
+        //    m.MakeReservation(name, date, table);
+        //    //Console.WriteLine("Confirmed");
+        //}
 
     }
 }

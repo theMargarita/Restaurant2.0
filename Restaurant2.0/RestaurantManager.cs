@@ -43,7 +43,7 @@
             Console.WriteLine($"Table {table.TableNumber} reserved for {customerName} on {date}");
 
 
-            // //Console.WriteLine("Confirmed");
+            //Console.WriteLine("Confirmed");
         }
         public void ShowBookings()
         {
@@ -82,7 +82,7 @@
             {
                 order.PlaceOrder(d, tableNumber);
             }
-            Console.WriteLine($"\nOrder Id {order.OrderID} confirmed at Table " +
+            Console.WriteLine($"\nOrder {order.OrderID} confirmed at Table " +
                 $"{tableNumber}.\nTotal: {order.CalculateTotal():C}");
         }
 
